@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 class Todo extends Component {
 	render() {
+		// console.log(this.props);
 		return (
-			<div>
-				{this.props.todo}
-				<button>X</button>
-			</div>
+			<li className="Todo">
+				{this.props.task}
+				{this.props.done}
+				<button>Edit</button>
+				<button onClick={this.props.remove}>X</button>
+			</li>
 		);
 	}
 }
