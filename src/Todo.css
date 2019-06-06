@@ -1,0 +1,36 @@
+.Todo,
+.Todo-completed {
+  margin: 1rem;
+}
+
+.Todo {
+  position: relative;
+  transition: .5s;
+}
+
+.Todo:before {
+  content: '';
+  width: 0%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  top: 51%;
+  transition: .5s;
+}
+
+.Todo-completed {
+  transition: .5s;
+  opacity: .2;
+  position: relative;
+}
+
+.Todo-completed:before {
+  content: '';
+  width: 110%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  transition: .5s;
+}

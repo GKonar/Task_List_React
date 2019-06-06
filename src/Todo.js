@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Todo.css';
 
 class Todo extends Component {
 	constructor(props) {
@@ -37,6 +38,7 @@ class Todo extends Component {
 	}
 
 	render() {
+		const isCompleted = this.props.isCompleted;
 		let result;
 		if (this.state.isEditing) {
 			result = (
@@ -54,8 +56,10 @@ class Todo extends Component {
 			);
 		} else {
 			result = (
-				<li className="Todo">
-					<span onClick={this.handleCheck}>{this.props.task}</span>
+				<li>
+					<span className={!isCompleted ? 'Todo' : 'Todo-completed'} onClick={this.handleCheck}>
+						{this.props.task}
+					</span>
 					<button onClick={this.toggleEdit}>Edit</button>
 					<button onClick={this.handleRemove}>X</button>
 				</li>

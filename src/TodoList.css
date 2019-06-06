@@ -1,0 +1,19 @@
+.TodoList-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  border-radius: 2px;
+  background-color: #40739e;
+  -webkit-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.TodoList {
+  list-style-type: none;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 import NewTodoForm from './NewTodoForm';
-
 import uuid from 'uuid/v4';
+import './TodoList.css';
 
 class TodoList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			todos: [
-				{ task: 'Play with Timi', isDone: false, id: uuid() }, //
-				{ task: 'Exercise', isDone: false, id: uuid() }
+				{ task: 'Play with Timi', isCompleted: false, id: uuid() }, //
+				{ task: 'Exercise', isCompleted: false, id: uuid() }
 			]
 		};
 
@@ -24,7 +24,7 @@ class TodoList extends Component {
 		let newTodo = {
 			...todo,
 			id: uuid(),
-			isDone: false
+			isCompleted: false
 		};
 		this.setState({ todos: [...this.state.todos, newTodo] });
 	}
@@ -47,16 +47,16 @@ class TodoList extends Component {
 	checkTodo(id) {
 		const todoIdx = this.state.todos.findIndex(todo => todo.id === id);
 		const newTodos = [...this.state.todos];
-		newTodos[todoIdx].isDone = !newTodos[todoIdx].isDone;
-		console.log('check');
+		newTodos[todoIdx].isCompleted = !newTodos[todoIdx].isCompleted;
 		this.setState({ todos: newTodos });
 	}
 
 	render() {
 		return (
-			<div>
+			<div className="TodoList-box">
+				<h1>ToDO Board</h1>
 				<NewTodoForm addTodo={this.addTodo} />
-				<ul>
+				<ul className="TodoList">
 					{this.state.todos.map(task => (
 						<Todo
 							{...task} //
