@@ -15,7 +15,7 @@ class TodoList extends Component {
 		};
 
 		this.addTodo = this.addTodo.bind(this);
-		// this.removeTodo = this.removeTodo.bind(this);
+		this.removeTodo = this.removeTodo.bind(this);
 	}
 
 	addTodo(todo) {
@@ -36,8 +36,9 @@ class TodoList extends Component {
 						<Todo
 							{...task} //
 							key={task.id}
-							remove={() => this.removeTodo(task.id)}
-						/> // Passing { ...task } object with all the porps
+							remove={this.removeTodo}
+							// remove={() => this.removeTodo(task.id)} arrow function way
+						/>
 					))}
 				</ul>
 				<NewTodoForm addTodo={this.addTodo} />
