@@ -11,7 +11,7 @@ class NewTodoForm extends Component {
 	}
 
 	handleChange(e) {
-		this.setState({ task: e.target.value });
+		this.setState({ [e.target.name]: e.target.value });
 	}
 
 	handleSubmit(e) {
@@ -23,8 +23,9 @@ class NewTodoForm extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<label htmlFor="todoInput">Add todo: </label>
+				<label htmlFor="todoInput">New todo: </label>
 				<input
+					name="task"
 					type="text" //
 					id="todoInput"
 					value={this.state.task}
