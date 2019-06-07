@@ -6,7 +6,8 @@ class Todo extends Component {
 		super(props);
 		this.state = {
 			isEditing: false,
-			task: this.props.task
+			task: this.props.task,
+			clicked: false
 		};
 		this.handleRemove = this.handleRemove.bind(this);
 		this.handleCheck = this.handleCheck.bind(this);
@@ -24,7 +25,10 @@ class Todo extends Component {
 	}
 
 	handleRemove(e) {
-		this.props.remove(this.props.id);
+		setTimeout(() => {
+			this.props.remove(this.props.id);
+		}, 700);
+		this.setState({ clicked: true });
 	}
 
 	handleUpdate(e) {
@@ -43,7 +47,7 @@ class Todo extends Component {
 		if (this.state.isEditing) {
 			result = (
 				<div>
-					<form onSubmit={this.handleUpdate}>
+					<form className="Todo-form" onSubmit={this.handleUpdate}>
 						<input
 							type="text" //
 							value={this.state.task}
@@ -56,12 +60,18 @@ class Todo extends Component {
 			);
 		} else {
 			result = (
-				<li>
+				<li className={this.state.clicked ? 'Todo-container Todo-clicked' : 'Todo-container'}>
 					<span className={!isCompleted ? 'Todo' : 'Todo-completed'} onClick={this.handleCheck}>
 						{this.props.task}
 					</span>
-					<button onClick={this.toggleEdit}>Edit</button>
-					<button onClick={this.handleRemove}>X</button>
+					<div className="Todo-icons">
+						<span className="Todo-edit" onClick={this.toggleEdit}>
+							<i className="fas fa-pen" />
+						</span>
+						<span className="Todo-delete" onClick={this.handleRemove}>
+							<i className="fas fa-trash-alt" />
+						</span>
+					</div>
 				</li>
 			);
 		}

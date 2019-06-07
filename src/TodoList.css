@@ -4,7 +4,9 @@
   flex-direction: column;
   width: 23rem;
   border-radius: 3px;
-  background: linear-gradient(to right, rgba(241, 111, 92, 1) 0%, rgba(255, 71, 87, 1) 29%, rgba(255, 71, 87, 1) 100%);
+  background: linear-gradient(to right, rgba(10, 61, 98, 1) 0%, rgba(95, 39, 205, 1) 96%, rgba(95, 39, 205, 1) 100%);
+  /* background: linear-gradient(to right, rgba(10, 61, 98, 1) 0%, rgba(73, 155, 234, 1) 96%, rgba(73, 155, 234, 1) 100%); */
+  /* background: linear-gradient(to right, rgba(241, 111, 92, 1) 0%, rgba(255, 71, 87, 1) 29%, rgba(255, 71, 87, 1) 100%); */
   -webkit-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.3);
   box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.3);
@@ -17,11 +19,13 @@
   margin: 0;
   margin-top: 1rem;
   font-weight: 500;
-  background-color: rgba(255, 255, 255, 0.16);
+  font-size: 2.5rem;
+  /* background-color: rgba(255, 255, 255, 0.16); */
 }
 
 .TodoList-p {
   margin: 0;
+  margin-bottom: .7rem;
   font-size: .8rem;
   position: relative;
 }

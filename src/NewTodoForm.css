@@ -1,0 +1,40 @@
+.NewTodoForm {
+  margin: 0rem 2.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.NewTodoForm label {
+  margin: .5rem 0;
+}
+
+.NewTodoForm-container {
+  width: 100%;
+  display: flex;
+}
+
+.NewTodoForm input {
+  width: 70%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: .5rem .5rem;
+  border: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.NewTodoForm button {
+  width: 30%;
+  border: none;
+  font-family: inherit;
+  font-size: .8rem;
+  border: none;
+  background: #4a69bd;
+  font-weight: 500;
+  color: white;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  outline: none;
+}

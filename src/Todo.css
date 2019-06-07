@@ -1,21 +1,36 @@
+.Todo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.173);
+  margin: .1rem 0;
+}
+
 .Todo,
 .Todo-completed {
   margin: 1rem;
+  margin-left: 2.5rem;
+  backface-visibility: hidden;
 }
 
 .Todo {
   position: relative;
   transition: .5s;
+  font-weight: 400;
 }
 
 .Todo:before {
   content: '';
   width: 0%;
   height: 1px;
-  background-color: black;
+  background-color: #fff;
   position: absolute;
   top: 51%;
   transition: .5s;
+}
+
+.Todo:hover {
+  cursor: crosshair;
 }
 
 .Todo-completed {
@@ -28,9 +43,66 @@
   content: '';
   width: 110%;
   height: 1px;
-  background-color: black;
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: -5%;
   transition: .5s;
+}
+
+.Todo-edit {}
+
+.Todo-delete {}
+
+.Todo-edit:hover,
+.Todo-delete:hover {
+  cursor: pointer;
+}
+
+.Todo-icons {
+  margin-right: 2.5rem;
+}
+
+/*  icons  */
+.fas:first-child {
+  margin-right: .5rem;
+}
+
+/* FORM */
+.Todo-form {
+  margin: .6rem 2.3rem;
+  backface-visibility: hidden;
+  position: relative;
+  font-weight: 400;
+
+  display: flex;
+}
+
+.Todo-form input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: .5rem .5rem;
+  width: 100%;
+  border: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.Todo-form button {
+  width: 50%;
+  font-family: inherit;
+  font-size: .8rem;
+  text-transform: uppercase;
+  border: none;
+  background: #4a69bd;
+  font-weight: 500;
+  color: white;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  outline: none;
+}
+
+.Todo-clicked {
+  opacity: 0;
+  transition: .7s;
 }
