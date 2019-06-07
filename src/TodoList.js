@@ -54,8 +54,8 @@ class TodoList extends Component {
 	render() {
 		return (
 			<div className="TodoList-box">
-				<h1>ToDO Board</h1>
-				<NewTodoForm addTodo={this.addTodo} />
+				<h1 className="TodoList-h1">ToDO Board !</h1>
+				<p className="TodoList-p">React Todo list app</p>
 				<ul className="TodoList">
 					{this.state.todos.map(task => (
 						<Todo
@@ -68,6 +68,7 @@ class TodoList extends Component {
 						/>
 					))}
 				</ul>
+				<NewTodoForm addTodo={this.addTodo} />
 			</div>
 		);
 	}

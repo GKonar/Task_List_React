@@ -2,12 +2,38 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 40%;
-  border-radius: 2px;
-  background-color: #40739e;
-  -webkit-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 23rem;
+  border-radius: 3px;
+  background: linear-gradient(to right, rgba(241, 111, 92, 1) 0%, rgba(255, 71, 87, 1) 29%, rgba(255, 71, 87, 1) 100%);
+  -webkit-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -15px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  color: white;
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+}
+
+.TodoList-h1 {
+  margin: 0;
+  margin-top: 1rem;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.TodoList-p {
+  margin: 0;
+  font-size: .8rem;
+  position: relative;
+}
+
+.TodoList-p::before {
+  content: '';
+  width: 80%;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.454);
+  top: 105%;
+  left: 10%;
 }
 
 .TodoList {
