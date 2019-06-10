@@ -7,11 +7,11 @@ import './TodoList.css';
 class TodoList extends Component {
 	constructor(props) {
 		super(props);
+		const todosJSON = localStorage.getItem('todos');
+		const todos = todosJSON !== null ? JSON.parse(todosJSON) : [];
+
 		this.state = {
-			todos: [
-				{ task: 'Play with Timi', isCompleted: false, id: uuid() }, //
-				{ task: 'Exercise', isCompleted: false, id: uuid() }
-			]
+			todos: todos
 		};
 
 		this.addTodo = this.addTodo.bind(this);
@@ -27,10 +27,16 @@ class TodoList extends Component {
 			isCompleted: false
 		};
 		this.setState({ todos: [...this.state.todos, newTodo] });
+
+		// save todos into local storage
+		localStorage.setItem('todos', JSON.stringify([...this.state.todos, newTodo]));
 	}
 
 	removeTodo(id) {
 		this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) });
+
+		// save todos into local storage after remove
+		localStorage.setItem('todos', JSON.stringify([...this.state.todos]));
 	}
 
 	updateTodo(id, updatedTask) {
@@ -68,7 +74,7 @@ class TodoList extends Component {
 						/>
 					))}
 				</ul>
-				<NewTodoForm addTodo={this.addTodo} />
+				<NewTodoForm addTodo={this.addTodo} todos={this.state.todos} />
 			</div>
 		);
 	}
